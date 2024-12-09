@@ -21,12 +21,12 @@ default: &default
   username: postgres
 
   # The password associated with the PostgreSQL role (username).
-  password: jesus
+  password: 1005
 
 
 development:
   <<: *default
-  database: molde_prueba_development
+  database: techworld
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -56,7 +56,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: molde_prueba_test
+  database: techworld
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
