@@ -1,10 +1,43 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @course %>
+<div class="row">
+  <div class="col-4 offset-4">
+    <%= render @course %>
 
-<div>
-  <%= link_to "Edit this course", edit_course_path(@course) %> |
-  <%= link_to "Back to courses", courses_path %>
+    <div>
+      <%= link_to "Edit this course", edit_course_path(@course) %> |
+      <%= link_to "Back to courses", courses_path %>
 
-  <%= button_to "Destroy this course", @course, method: :delete %>
+      <%= button_to "Destroy this course", @course, method: :delete %>
+    </div>
+
+    <div class="mt-3">
+      <h4>Agregar alumnos al curso</h4>
+      <form action="">
+        <select name="student_id" class="form-control"required>
+          <% @students_out.each do |st| %>
+            <option value="<%=st.id%>"><%=st.name%></option>
+          <%end%>
+        </select>
+        <div class="mt-2">
+          <input type="submit" value="Agregar" class="btn btn-success">
+        </div>
+      </form>
+    </div>
+    
+    <div class="mt-3">
+      <h4>Eliminar Alumnos del curso</h4>
+      <form action="">
+        <select name="student_id" class="form-control"required>
+          <option value="A1">Alumno 1</option>
+          <option value="w">Alumno 2</option>
+          <option value="sdf">Alumno 3</option>
+        </select>
+        <div class="mt-2">
+          <input type="submit" value="Agregar" class="btn btn-success">
+        </div>
+      </form>
+    </div>
+  
+  </div>
 </div>

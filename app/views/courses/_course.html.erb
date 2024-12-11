@@ -1,22 +1,22 @@
 <div id="<%= dom_id course %>">
   <p>
-    <strong>Title:</strong>
+    <strong>Asignatura:</strong>
     <%= course.title %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <strong>Descripción:</strong>
     <%= course.description %>
   </p>
 
   <p>
-    <strong>Duration:</strong>
+    <strong>Duración:</strong>
     <%= course.duration %>
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= course.user_id %>
+    <strong>Instructor/a:</strong>
+    <%= course.user.name %>
   </p>
 
 </div>
