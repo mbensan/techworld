@@ -12,26 +12,26 @@
     </div>
 
     <div class="mt-3">
-      <h4>Agregar alumnos al curso</h4>
+      <h4>Eliminar alumnos del curso</h4>
       <form action="">
         <select name="student_id" class="form-control"required>
-          <% @students_out.each do |st| %>
+          <% @students_in.each do |st| %>
             <option value="<%=st.id%>"><%=st.name%></option>
           <%end%>
         </select>
         <div class="mt-2">
-          <input type="submit" value="Agregar" class="btn btn-success">
+          <input type="submit" value="Eliminar" class="btn btn-danger">
         </div>
       </form>
     </div>
     
     <div class="mt-3">
-      <h4>Eliminar Alumnos del curso</h4>
+      <h4>Agregar Alumnos al curso</h4>
       <form action="">
         <select name="student_id" class="form-control"required>
-          <option value="A1">Alumno 1</option>
-          <option value="w">Alumno 2</option>
-          <option value="sdf">Alumno 3</option>
+          <% @students_out.each do |st| %>
+            <option value="<%=st.id%>"><%=st.name%></option>
+          <%end%>
         </select>
         <div class="mt-2">
           <input type="submit" value="Agregar" class="btn btn-success">

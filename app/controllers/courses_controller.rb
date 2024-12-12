@@ -10,12 +10,28 @@ class CoursesController < ApplicationController
 
   # GET /courses/1 or /courses/1.json
   def show
-    @students_out = User.all
+    query_in = "select u.id, u.name from users u join enrollments e on u.id = e.user_id where e.course_id = #{params[:id]} and u.role = 'estudiante'"
+    @students_in = User.find_by_sql(query_in)
+    
+    query_out = "select id, name from users where id not in 
+                  (select u.id from users u
+                  join enrollments e on u.id = e.user_id 
+                  where e.course_id = #{params[:id]}
+                  ) and role = 'estudiante'"
+    @students_out = User.find_by_sql(query_out)
+    
+    puts(@students_out)
   end
 
   # GET /courses/new
   def new
     @course = Course.new
+  end
+
+  def add_student
+  end
+
+  def remove_student
   end
 
   # GET /courses/1/edit
